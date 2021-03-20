@@ -1,7 +1,8 @@
 {
   "name": "7zip.html",
-  "version": "1.0.0",
-  "description": "A tool to open 7zip archive and have a look at text file in it.",
+  "private": true,
+  "version": "1.0.1",
+  "description": "A tool to browse 7zip archives online in the web-browsers.",
   "scripts": {
     "lint": "npm run lint:styles; npm run lint:scripts",
     "lint:styles": "stylelint src",
@@ -11,19 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hodovani/7zip.html"
+    "url": "git+https://github.com/mpds-io/7zip.html"
   },
   "keywords": [
+    "7z",
     "7zip",
-    "online",
-    "tool",
-    "unzip",
-    "archive"
+    "7z-archive",
+    "unzip"
   ],
   "author": "Matvii Hodovaniuk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hodovani/7zip.html/issues"
+    "url": "https://github.com/mpds-io/7zip.html/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
