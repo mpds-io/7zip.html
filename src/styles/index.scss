@@ -1,14 +1,15 @@
 body {
   font-size: 16px;
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: Courier;
   margin-left: auto;
   margin-right: auto;
-  width: 640px;
-  background-color: #fffce3;
+  background-color: #f6f6f6;
+  width: 800px;
   height: 100%;
 }
 
 .twoColumn {
+  margin-top: 3em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,8 +17,8 @@ body {
 
 .column {
   width: 100%;
-  max-width: 320px;
-  overflow: auto;
+  max-width: 400px;
+  overflow: hidden;
   margin-right: 5px;
   padding: 5px;
   background-color: #d3d0ba;
@@ -37,6 +38,10 @@ ul {
   list-style-type: none;
 }
 
+li {
+  cursor: pointer;
+}
+
 li::before {
   content: "📄 ";
 }
@@ -49,4 +54,8 @@ textarea {
   width: 100%;
   height: 100%;
   padding: 0;
+}
+
+#intro{
+  margin-top: 3em;
 }
