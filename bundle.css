@@ -1,0 +1,4 @@
+body{font-size:16px;font-family:'Roboto', Arial, Helvetica, sans-serif;margin-left:auto;margin-right:auto;width:640px;background-color:#fffce3;height:100%}.twoColumn{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.column{width:100%;max-width:320px;overflow:auto;margin-right:5px;padding:5px;background-color:#d3d0ba}.nested{display:none}.active{display:block}ul{list-style-type:none}li::before{content:"📄 "}li.folder::before{content:"📂 "}textarea{width:100%;height:100%;padding:0}
+
+
+/*# sourceMappingURL=bundle.css.map*/
