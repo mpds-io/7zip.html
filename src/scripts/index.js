@@ -30,6 +30,7 @@ if (location.href.split('?archiveUrl=')[1]) {
                 liId: 'treeView',
                 name: 'externalArchive'
             });
+            openFirstFolder();
         });
 }
 
@@ -43,6 +44,7 @@ fileInput.addEventListener('change', async (e) => {
         liId: 'treeView',
         name: file.name
     });
+    openFirstFolder();
 });
 
 function walk({
@@ -89,11 +91,9 @@ function walk({
         }
     } else {
         const li = document.createElement('li');
-        li.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
         li.innerText = node.name;
-        li.addEventListener('click', () => {
+        li.addEventListener('click', (e) => {
+            e.stopPropagation();
             const reader = new FileReader();
             reader.onload = function(event) {
                 if (isASCII(event.target.result)){
@@ -106,6 +106,11 @@ function walk({
         });
         root.appendChild(li);
     }
+}
+
+function openFirstFolder() {
+    const firstFolder = treeView.querySelector('.folder');
+    firstFolder.click();
 }
 
 function isASCII(str) {
