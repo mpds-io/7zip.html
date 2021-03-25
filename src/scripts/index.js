@@ -96,7 +96,11 @@ function walk({
             e.stopPropagation();
             const reader = new FileReader();
             reader.onload = function(event) {
-                textarea.textContent = event.target.result;
+                if (isASCII(event.target.result)){
+                    textarea.textContent = event.target.result;    
+                } else {
+                    textarea.textContent = "Sorry, we cannot display binary files";
+                }
             };
             reader.readAsText(node);
         });
@@ -107,4 +111,8 @@ function walk({
 function openFirstFolder() {
     const firstFolder = treeView.querySelector('.folder');
     firstFolder.click();
+}
+
+function isASCII(str) {
+    return /^[\x00-\x7F]*$/.test(str);
 }
