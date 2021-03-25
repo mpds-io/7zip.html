@@ -96,10 +96,18 @@ function walk({
         li.addEventListener('click', () => {
             const reader = new FileReader();
             reader.onload = function(event) {
-                textarea.textContent = event.target.result;
+                if(isASCII(event.target.result)){
+                    textarea.textContent = event.target.result;    
+                } else {
+                    alert("Sorry, we can't open this file");
+                }
             };
             reader.readAsText(node);
         });
         root.appendChild(li);
     }
+}
+
+function isASCII(str) {
+    return /^[\x00-\x7F]*$/.test(str);
 }
