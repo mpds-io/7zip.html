@@ -96,10 +96,10 @@ function walk({
         li.addEventListener('click', () => {
             const reader = new FileReader();
             reader.onload = function(event) {
-                if(isASCII(event.target.result)){
+                if (isASCII(event.target.result)){
                     textarea.textContent = event.target.result;    
                 } else {
-                    alert("Sorry, we can't open this file");
+                    textarea.textContent = "Sorry, we cannot display binary files";
                 }
             };
             reader.readAsText(node);
