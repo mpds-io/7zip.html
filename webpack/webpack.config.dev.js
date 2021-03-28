@@ -13,7 +13,6 @@ module.exports = merge(common, {
     chunkFilename: 'js/[name].chunk.js',
   },
   devServer: {
-    inline: true,
     hot: true,
   },
   plugins: [
@@ -22,7 +21,7 @@ module.exports = merge(common, {
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
     new StylelintPlugin({
-      files: Path.join('src', '**/*.s?(a|c)ss'),
+      files: Path.join('src', '**/*.css'),
     }),
   ],
   module: {
@@ -37,8 +36,8 @@ module.exports = merge(common, {
         loader: 'babel-loader',
       },
       {
-        test: /\.s?css$/i,
-        use: ['style-loader', 'css-loader?sourceMap=true', 'postcss-loader', 'sass-loader'],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader?sourceMap=true', 'postcss-loader'],
       },
     ],
   },
