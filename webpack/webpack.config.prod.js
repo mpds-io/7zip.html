@@ -16,9 +16,6 @@ module.exports = merge(common, {
     new Webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    new MiniCssExtractPlugin({
-      filename: 'bundle.css',
-    }),
   ],
   module: {
     rules: [
@@ -28,8 +25,34 @@ module.exports = merge(common, {
         use: 'babel-loader',
       },
       {
-        test: /\.css/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [ 
+          {
+            loader: 'style-loader',
+            options: { 
+                insert: 'body', // insert style tag inside of <head>
+                injectType: 'singletonStyleTag' // this is for wrap all your style in just one style tag
+            },
+          },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+          },
+        }
+          // { loader: 'style-loader', options: { injectType: 'styleTag' } },
+          // 'css-loader',
+        //   { loader: "style-loader" }, 
+        // {
+        //   loader: 'css-loader',
+        //   options: {
+        //     modules: true,
+        //     importLoaders: 1,
+        //   },
+        // }
+      ],
       },
     ],
   },
