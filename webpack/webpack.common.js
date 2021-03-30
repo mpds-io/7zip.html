@@ -23,7 +23,7 @@ module.exports = {
 		new CopyWebpackPlugin({
 			patterns: [
 				{ from: 'node_modules/libarchive.js/dist', to: 'public' },
-				{ from: Path.resolve(__dirname, '../src/public'), to: 'public' },
+				{ from: Path.resolve(__dirname, '../public'), to: 'public' },
 				{ from: Path.resolve(__dirname, '../src/assets'), to: 'public' },
 			],
 		}),
