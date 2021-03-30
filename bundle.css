@@ -1,4 +1,64 @@
-body{font-size:16px;font-family:Courier;margin-left:auto;margin-right:auto;background-color:#f6f6f6;width:800px;height:100%}.twoColumn{margin-top:3em;display:flex;flex-direction:row;justify-content:space-between}.column{width:100%;max-width:400px;overflow:hidden;margin-right:5px;padding:5px;background-color:#d3d0ba}.nested{display:none}.active{display:block}ul{list-style-type:none}li{cursor:pointer}li::before{content:"📄 "}li.folder::before{content:"📂 "}textarea{width:100%;height:100%;padding:0}#intro{margin-top:3em}
+body {
+  font-size: 16px;
+  font-family: Courier, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f6f6f6;
+  width: 800px;
+  height: 100%;
+}
+
+.twoColumn {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #d3d0ba;
+}
+
+/* Hide the nested list */
+.nested {
+  display: none;
+}
+
+/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+.active {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  cursor: pointer;
+}
+
+li::before {
+  content: "📄 ";
+}
+
+li.folder::before {
+  content: "📂 ";
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+#intro {
+  margin-top: 3em;
+}
 
 
 /*# sourceMappingURL=bundle.css.map*/
