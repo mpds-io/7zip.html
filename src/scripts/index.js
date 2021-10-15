@@ -1,17 +1,13 @@
 
 import '../styles/index.css';
-
-import {
-    Archive
-} from 'libarchive.js/main.js';
-
-import {
-    v4 as uuidv4
-} from 'uuid';
+import { Archive } from 'libarchive.js/main.js';
+import { v4 as uuidv4 } from 'uuid';
+import download from 'downloadjs';
 
 const textarea = document.getElementById('fileOutput');
 const fileInput = document.getElementById('fileInput');
 const treeView = document.getElementById('treeView');
+let downloadable = false;
 
 Archive.init({
     workerUrl: 'public/worker-bundle.js',
@@ -45,6 +41,10 @@ fileInput.addEventListener('change', async (e) => {
         name: file.name
     });
     openFirstFolder();
+});
+
+document.querySelector('#download').addEventListener('click', function(){
+    downloadable && download(textarea.textContent, downloadable);
 });
 
 function walk({
@@ -97,9 +97,11 @@ function walk({
             const reader = new FileReader();
             reader.onload = function(event) {
                 if (isASCII(event.target.result)){
-                    textarea.textContent = event.target.result;    
+                    textarea.textContent = event.target.result;
+                    downloadable = node.name;
                 } else {
                     textarea.textContent = "Sorry, we cannot display binary files";
+                    downloadable = false;
                 }
             };
             reader.readAsText(node);

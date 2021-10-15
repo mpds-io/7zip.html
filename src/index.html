@@ -7,15 +7,15 @@
             content="width=device-width, initial-scale=1"
         />
     <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
-    <title>7zip-in-browser</title>
+    <title>Archive data</title>
     </head>
     <body>
 
     <div class="twoColumn">
-      <div class="column">
+      <div class="column left">
         <ul id="treeView"><i>No archive chosen</i></ul>
       </div>
-      <div class="column">
+      <div class="column right">
         <textarea id="fileOutput"></textarea>
       </div>
     </div>
@@ -25,6 +25,8 @@
       <br /><br />
       <input id="fileInput" type="file" />
     </div>
+
+    <div id="download"><span>&darr;</span><br />Save</div>
 
     </body>
 </html>

@@ -4,7 +4,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   background-color: #f6f6f6;
-  width: 800px;
+  width: 980px;
   height: 100%;
 }
 
@@ -17,11 +17,18 @@ body {
 
 .column {
   width: 100%;
-  max-width: 400px;
   overflow: hidden;
   margin-right: 5px;
   padding: 5px;
-  background-color: #d3d0ba;
+  background-color: #eee;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
 }
 
 /* Hide the nested list */
@@ -36,6 +43,7 @@ body {
 
 ul {
   list-style-type: none;
+  padding-left: 1.5em;
 }
 
 li {
@@ -58,4 +66,29 @@ textarea {
 
 #intro {
   margin-top: 3em;
+}
+
+#download {
+  position: fixed;
+  bottom: 3vmin;
+  right: 3vmin;
+  width: 18vmin;
+  height: 18vmin;
+  z-index: 10;
+  text-align: center;
+  font-size: 5vmin;
+  color: #fff;
+  border-radius: 10px;
+  background: #bbb;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#download:hover {
+  opacity: 0.75;
+}
+
+#download span {
+  font-size: 9vmin;
+  font-weight: bold;
 }
