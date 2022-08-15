@@ -27,7 +27,7 @@ if (location.href.split('?archiveUrl=')[1]) {
                 name: 'externalArchive'
             });
             openFirstFolder();
-        });
+        }).catch(error => alert("Sorry, we couldn't download the data archive"));
 }
 
 fileInput.addEventListener('change', async (e) => {
